@@ -6,6 +6,7 @@ set noswapfile
 set noundofile
 set mouse=a         " enable mouse
 set lines=50 columns=100
+set nowrap
 
 " --------------------
 " Display
@@ -17,12 +18,20 @@ set list            " Show unvisible characters
 set listchars=tab:>.,trail:.,nbsp:%,extends:>,precedes:<,eol:<
 
 " --------------------
+" Syntax
+" --------------------
+" md as markdown, instead of modula2
+autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+" Disable highlight italic in Markdown
+autocmd FileType markdown hi! def link markdownItalic LineNr
+
+" --------------------
 " Indent
 " --------------------
 set autoindent
 set smartindent
 set noexpandtab       " Don't Change tab to space
-set tabstop=4 softtabstop=0 shiftwidth=4    " tab width
+set tabstop=2 softtabstop=0 shiftwidth=2    " tab width
 
 " --------------------
 " Encoding
@@ -69,9 +78,10 @@ let path='~/bundle'
 call vundle#rc(path)
 
 Bundle 'gmarik/vundle'
-" Color Schemes
+" Syntax & Schemes
 Bundle 'rickharris/vim-monokai'
 Bundle 'tomasr/molokai'
+Bundle 'plasticboy/vim-markdown'
 " Coding 
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
@@ -88,6 +98,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 " Javascript
 Bundle 'pangloss/vim-javascript'
+Bundle 'groenewege/vim-less'
 " Others
 Bundle 'thinca/vim-singleton'
 Bundle 'wikitopian/hardmode'
