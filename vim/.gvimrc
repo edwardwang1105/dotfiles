@@ -1,26 +1,16 @@
-autocmd GUIEnter * set transparency=240
-autocmd GUIEnter * simalt ~x
-autocmd BufEnter * :syntax sync fromstart
-" initial window size
-" set lines=50 columns=100
-
-" font
-set guifont=MeiryoKe_Console:h11:cSHIFTJIS
-
-" color
+" --------------------
+" Color
+" --------------------
 set t_Co=256
 
 " scheme
 let g:molokai_original = 1
 colorscheme molokai
 
-" --------------------
-" Highlight
-" --------------------
-" tabの表示色を設定
+" tab
 hi SpecialKey guifg=grey20
 
-"eolの表示色を設定
+" eol
 hi NonText guifg=grey20
 
 " TabLine
@@ -40,6 +30,8 @@ set guioptions-=r " no right scrollbar
 set guioptions-=R " no right scrollbar
 set guioptions-=l " no left scrollbar
 set guioptions-=L " no left scrollbar
+
+set wildmenu
 
 " --------------------
 " Plugin Setting

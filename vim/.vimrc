@@ -14,6 +14,7 @@ set nowrap
 set number          " Show colum number
 set showmatch       " Highlight match braces
 set cursorline      " Highlight current line
+set hlsearch        " Highlight search word
 set list            " Show unvisible characters
 set listchars=tab:>.,trail:.,nbsp:%,extends:>,precedes:<,eol:<
 
@@ -30,7 +31,7 @@ autocmd FileType markdown hi! def link markdownItalic LineNr
 " --------------------
 set autoindent
 set smartindent
-set noexpandtab       " Don't Change tab to space
+set expandtab       " Change tab to space
 set tabstop=2 softtabstop=0 shiftwidth=2    " tab width
 
 " --------------------
@@ -65,44 +66,40 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" ディレクトリ閲覧時（:tabnew .とか）の表示をツリー形式に
-"let g:netrw_liststyle=3
-
 " --------------------
-" Plugin (Vendle)
+" Plugin
 " --------------------
 set nocompatible
 filetype off
-set rtp+=~/bundle/vundle/
-let path='~/bundle'
-call vundle#rc(path)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 " Syntax & Schemes
-Bundle 'rickharris/vim-monokai'
-Bundle 'tomasr/molokai'
-Bundle 'plasticboy/vim-markdown'
+Plugin 'rickharris/vim-monokai'
+Plugin 'tomasr/molokai'
+Plugin 'plasticboy/vim-markdown'
 " Coding 
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 " IDE features
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kien/ctrlp.vim'
 " Fast coding
-Bundle 'Shougo/neocomplete'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'Shougo/neocomplete'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " Javascript
-Bundle 'pangloss/vim-javascript'
-Bundle 'groenewege/vim-less'
+Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
 " Others
-Bundle 'thinca/vim-singleton'
-Bundle 'wikitopian/hardmode'
+Plugin 'wikitopian/hardmode'
 
+call vundle#end()
 filetype plugin indent on
 
 " --------------------
@@ -113,9 +110,6 @@ nnoremap <silent> <C-e>     :NERDTreeTabsToggle<CR>
 
 let NERDTreeDirArrows=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif      " auto close NERDTree
-
-" vim-singleton
-call singleton#enable()
 
 " ctrlp
 let g:ctrlp_open_new_file='t'
