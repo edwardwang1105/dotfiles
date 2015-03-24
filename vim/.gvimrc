@@ -1,13 +1,16 @@
+" --------------------
+" General
+" --------------------
 if has('win32') || has('win64')
   autocmd GUIEnter * set transparency=240
-  autocmd GUIEnter * simalt ~x
   autocmd BufEnter * :syntax sync fromstart
-  " initial window size
-  " set lines=50 columns=100
 
   " font
   set guifont=MeiryoKe_Console:h11:cSHIFTJIS
 endif
+
+" Maximize gvim window
+set lines=999 columns=999
 
 " --------------------
 " Color
