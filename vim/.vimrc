@@ -66,13 +66,25 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Clipboard
+vmap <C-c> "+y
+imap <C-v> <esc>"+pa
+
 " --------------------
 " Plugin
 " --------------------
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('unix')
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+endif
+
+if has('win32') || has('win64')
+  set rtp+=~/.vim/bundle/Vundle.vim
+  let path='~/.vim/bundle'
+  call vundle#begin(path)
+endif
 
 Plugin 'gmarik/vundle'
 " Syntax & Schemes
@@ -93,11 +105,15 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/neocomplete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Lokaltog/vim-easymotion'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
+Plugin 'scrooloose/syntastic'
+" Powershell
+Plugin 'PProvost/vim-ps1'
 " Others
-Plugin 'wikitopian/hardmode'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -185,3 +201,21 @@ endif
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" syntastic
+let g:syntastic_auto_loc_list=1
+
+" --------------------
+" Plugin Setting (easymotion)
+" --------------------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
