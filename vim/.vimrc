@@ -106,6 +106,7 @@ Plugin 'Shougo/neocomplete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'junegunn/vim-easy-align'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
@@ -119,7 +120,7 @@ call vundle#end()
 filetype plugin indent on
 
 " --------------------
-" Plugin Setting
+" Plugin Setting (NEARDTree)
 " --------------------
 " NERDTree & NERDTree tabs
 nnoremap <silent> <C-e>     :NERDTreeTabsToggle<CR>
@@ -127,7 +128,9 @@ nnoremap <silent> <C-e>     :NERDTreeTabsToggle<CR>
 let NERDTreeDirArrows=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif      " auto close NERDTree
 
-" ctrlp
+" --------------------
+" Plugin Setting (ctrlp)
+" --------------------
 let g:ctrlp_open_new_file='t'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_custom_ignore = {
@@ -135,9 +138,6 @@ let g:ctrlp_custom_ignore = {
   \ |(node_modules|bower_components)',
   \ 'file': '\v\.(exe|so|dll)$'
   \ }
-
-" hardmode
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " --------------------
 " Plugin Setting (neocomplete)
@@ -197,12 +197,16 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-" ultisnips
+" --------------------
+" Plugin Setting (ultisnips)
+" --------------------
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" syntastic
+" --------------------
+" Plugin Setting (syntastic)
+" --------------------
 let g:syntastic_auto_loc_list=1
 
 " --------------------
@@ -219,3 +223,11 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" --------------------
+" Plugin Setting (easy align)
+" --------------------
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
