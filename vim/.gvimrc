@@ -1,16 +1,23 @@
 " --------------------
-" General
+" winodws
 " --------------------
 if has('win32') || has('win64')
   autocmd GUIEnter * set transparency=240
   autocmd BufEnter * :syntax sync fromstart
-
-  " font
-  set guifont=MeiryoKe_Console:h11:cSHIFTJIS
 endif
 
 " Maximize gvim window
 set lines=999 columns=999
+
+" --------------------
+" fonts
+" --------------------
+if has('unix')
+  set guifont=Ricty\ Diminished\ for\ Powerline\ 12
+endif
+if has('win32') || has('win64')
+  set guifont=Ricty\ Diminished\ for\ Powerline:h12
+endif
 
 " --------------------
 " Color
@@ -26,11 +33,6 @@ hi SpecialKey guifg=grey20
 
 " eol
 hi NonText guifg=grey20
-
-" TabLine
-set showtabline=2
-set guioptions-=e
-hi TabLineSel guifg=#272822 guibg=#FFAEC9
 
 " Split Window
 hi VertSplit guifg=#080808 guibg=#080808 gui=bold
