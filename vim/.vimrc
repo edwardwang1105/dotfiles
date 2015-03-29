@@ -91,7 +91,7 @@ Plugin 'gmarik/vundle'
 Plugin 'rickharris/vim-monokai'
 Plugin 'tomasr/molokai'
 Plugin 'plasticboy/vim-markdown'
-" Coding 
+" Coding
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -114,6 +114,7 @@ Plugin 'scrooloose/syntastic'
 " Powershell
 Plugin 'PProvost/vim-ps1'
 " Others
+Plugin 'tpope/vim-fugitive'
 Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
