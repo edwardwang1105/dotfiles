@@ -1,19 +1,25 @@
 " --------------------
 " winodws
 " --------------------
+if has('unix')
+  set transparency=5
+endif
 if has('win32') || has('win64')
   autocmd GUIEnter * set transparency=240
   autocmd BufEnter * :syntax sync fromstart
 endif
 
 " Maximize gvim window
-set lines=999 columns=999
+set lines=80 columns=200
 
 " --------------------
 " fonts
 " --------------------
 if has('unix')
   set guifont=Ricty\ Diminished\ for\ Powerline\ 12
+endif
+if has('mac')
+  set guifont=Ricty\ Diminished\ for\ Powerline:h16
 endif
 if has('win32') || has('win64')
   set guifont=Ricty\ Diminished\ for\ Powerline:h12
