@@ -31,8 +31,9 @@ endif
 set t_Co=256
 
 " scheme
-let g:molokai_original = 1
-colorscheme molokai
+syntax enable
+set background=dark
+colorscheme solarized
 
 " tab
 hi SpecialKey guifg=grey20
