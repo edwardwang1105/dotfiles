@@ -88,7 +88,8 @@ endif
 
 Plugin 'gmarik/vundle'
 " Syntax & Schemes
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'rickharris/vim-monokai'
+Plugin 'tomasr/molokai'
 Plugin 'plasticboy/vim-markdown'
 " Coding
 Plugin 'Raimondi/delimitMate'
