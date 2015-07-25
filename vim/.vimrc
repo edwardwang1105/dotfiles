@@ -86,7 +86,7 @@ if has('win32') || has('win64')
   call vundle#begin(path)
 endif
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 " Syntax & Schemes
 Plugin 'rickharris/vim-monokai'
 Plugin 'tomasr/molokai'
