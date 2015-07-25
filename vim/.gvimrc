@@ -1,9 +1,6 @@
 " --------------------
 " winodws
 " --------------------
-if has('unix')
-  set transparency=5
-endif
 if has('win32') || has('win64')
   autocmd GUIEnter * set transparency=240
   autocmd BufEnter * :syntax sync fromstart
