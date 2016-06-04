@@ -72,6 +72,12 @@ noremap <Right> <NOP>
 vmap <C-c> "+y
 imap <C-v> <esc>"+pa
 
+" QuickFix
+nnoremap [q :cprevious<CR>   " go to prev
+nnoremap ]q :cnext<CR>       " go to next
+nnoremap [Q :<C-u>cfirst<CR> " go to first
+nnoremap ]Q :<C-u>clast<CR>  " go to last
+
 " --------------------
 " Plugin
 " --------------------
