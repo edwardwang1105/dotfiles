@@ -20,6 +20,7 @@ if has('mac')
 endif
 if has('win32') || has('win64')
   set guifont=Ricty\ Diminished\ for\ Powerline:h12
+  set rop=type:directx
 endif
 
 " --------------------

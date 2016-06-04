@@ -7,13 +7,15 @@ set noundofile
 set mouse=a         " enable mouse
 set lines=50 columns=100
 set nowrap
+set visualbell t_vb=
+set novisualbell
 
 " --------------------
 " Display
 " --------------------
 set number          " Show colum number
 set showmatch       " Highlight match braces
-set cursorline      " Highlight current line
+"set cursorline      " Highlight current line
 set hlsearch        " Highlight search word
 set list            " Show unvisible characters
 set listchars=tab:>.,trail:.,nbsp:%,extends:>,precedes:<,eol:<
@@ -113,9 +115,11 @@ Plugin 'groenewege/vim-less'
 Plugin 'scrooloose/syntastic'
 " Powershell
 Plugin 'PProvost/vim-ps1'
-" Others
+" Git
 Plugin 'tpope/vim-fugitive'
-Plugin 'editorconfig/editorconfig-vim'
+Plugin 'airblade/vim-gitgutter'
+" Ohters
+"Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
